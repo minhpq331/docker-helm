@@ -23,4 +23,4 @@ RUN apk add --update --no-cache git ca-certificates
 
 COPY --from=build /tmp/linux-amd64/helm /bin/helm
 
-ENTRYPOINT ["/bin/helm"]
+ENTRYPOINT [""]
