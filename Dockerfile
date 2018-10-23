@@ -3,9 +3,9 @@ MAINTAINER Mario Siegenthaler <mario.siegenthaler@linkyard.ch>
 
 RUN apk add --update --no-cache ca-certificates git
 
-ENV VERSION=v2.9.1
+ENV VERSION=v2.11.0
 ENV FILENAME=helm-${VERSION}-linux-amd64.tar.gz
-ENV SHA256SUM=56ae2d5d08c68d6e7400d462d6ed10c929effac929fedce18d2636a9b4e166ba
+ENV SHA256SUM=02a4751586d6a80f6848b58e7f6bd6c973ffffadc52b4c06652db7def02773a1
 
 WORKDIR /
 
@@ -22,5 +22,3 @@ FROM alpine:3.7
 RUN apk add --update --no-cache git ca-certificates
 
 COPY --from=build /tmp/linux-amd64/helm /bin/helm
-
-ENTRYPOINT [""]
