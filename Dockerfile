@@ -3,9 +3,9 @@ MAINTAINER Mario Siegenthaler <mario.siegenthaler@linkyard.ch>
 
 RUN apk add --update --no-cache ca-certificates git
 
-ENV VERSION=v2.11.0
+ENV VERSION=v2.14.0
 ENV FILENAME=helm-${VERSION}-linux-amd64.tar.gz
-ENV SHA256SUM=02a4751586d6a80f6848b58e7f6bd6c973ffffadc52b4c06652db7def02773a1
+ENV SHA256SUM=b5f6a1e642971af1363cadbe1f7f37c029c11dd93813151b521c0dbeacfbdaa9
 
 WORKDIR /
 
@@ -19,6 +19,6 @@ RUN curl -L http://storage.googleapis.com/kubernetes-helm/${FILENAME} > ${FILENA
 # The image we keep
 FROM alpine:3.7
 
-RUN apk add --update --no-cache git ca-certificates
+RUN apk add --update --no-cache curl git ca-certificates
 
 COPY --from=build /tmp/linux-amd64/helm /bin/helm
